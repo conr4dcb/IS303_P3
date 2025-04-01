@@ -69,7 +69,7 @@ for classes in list_classes :
 
 # UNCLAIMED - TASK 5 - Format each sheet so the columns are the title width + 5. Bold headers too.
 
-# CONRAD BRADFORD - Save the new excel workbook named "formatted_grades.xlsx"
+# CONRAD BRADFORD - TASK 6 - Save the new excel workbook named "formatted_grades.xlsx"
 
 formatted_workbook.save(filename="formatted_grades.xlsx")
 formatted_workbook.close()
