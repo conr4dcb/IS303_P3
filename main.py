@@ -13,7 +13,7 @@ formatted_workbook = Workbook()
 
 formatted_workbook.remove(formatted_workbook.active)
 
-# TASK 1 - Create a new worksheet for each class type (algebra, calc, etc.) 
+# COMPLETED AS A GROUP - TASK 1 - Create a new worksheet for each class type (algebra, calc, etc.) 
 # This should be dynamic and create the classes based on the student data
 list_classes = []
 col_num = 1
@@ -33,7 +33,7 @@ for classes in list_classes :
     formatted_workbook[classes]["C1"] = "Student ID"
     formatted_workbook[classes]["D1"] = "Grade"
 
-    # TASK 2 - In each new sheet, create separate columns for last name, first name, Student ID, and grade
+    # COMPLETED AS A GROUP - TASK 2 - In each new sheet, create separate columns for last name, first name, Student ID, and grade
     col_num = 2
     for row in range(2, old_workbook['Grades'].max_row + 1) :
         
@@ -54,7 +54,7 @@ for classes in list_classes :
 
 # UNCLAIMED - TASK 5 - Format each sheet so the columns are the title width + 5. Bold headers too.
 
-# TASK 6 - Save the new excel workbook named "formatted_grades.xlsx"
+# CONRAD BRADFORD - Save the new excel workbook named "formatted_grades.xlsx"
 
 formatted_workbook.save(filename="formatted_grades.xlsx")
 formatted_workbook.close()
