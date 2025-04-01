@@ -1,4 +1,4 @@
-# Authors: Conrad Bradford, Blake Rogers, Haley Sommer
+# Authors: Conrad Bradford, Blake Rogers, Haley Sommer, Elise Chapman, Rebecca Mecham
 # IS 303 Section 003
 # Write a program that takes in grade data excel sheets and formats it easy to use.
 
@@ -67,7 +67,20 @@ for classes in list_classes :
     formatted_workbook[classes]["G5"] = "=COUNT(D:D)"
 
 
-# UNCLAIMED - TASK 5 - Format each sheet so the columns are the title width + 5. Bold headers too.
+# ELISE CHAPMAN - TASK 5 - Format each sheet so the columns are the title width + 5.
+columns = ["A", "B", "C", "D", "E", "F", "G", "H"] 
+
+for iCol in formatted_workbook[classes].columns : 
+    max_width = 0
+    for cell in iCol:
+        if cell.value :
+            max_width = max(max_width, len(str(cell.value)))
+    adjusted_width = max_width + 5
+    formatted_workbook[classes].column_dimensions [columns[0]].width = adjusted_width
+
+# Bold Headers
+for cell in formatted_workbook[classes]["1:1"] :
+    cell.font = Font(bold=True)
 
 # CONRAD BRADFORD - Save the new excel workbook named "formatted_grades.xlsx"
 
