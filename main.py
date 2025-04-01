@@ -55,7 +55,6 @@ for classes in list_classes :
 # Use functions to calculate the following data
 # The Highest Grade, lowest grade, mean grade, median grade, number of students in class
 for classes in list_classes :
-    formatted_workbook.create_sheet(classes)
     formatted_workbook[classes]["F1"] = "Summary Type"
     formatted_workbook[classes]["F2"] = "Highest Grade"
     formatted_workbook[classes]["F3"] = "Lowest Grade"
