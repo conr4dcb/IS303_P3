@@ -7,8 +7,7 @@ from openpyxl.styles import Font
 from openpyxl import load_workbook
 
 
-#old_workbook =  load_workbook(filename = "Poorly_Organized_Data_1.xlsx")
-old_workbook =  load_workbook(filename = "C:/Users/rebec/OneDrive/Documents/Winter 2025/IS_303/GitHub/IS303_P3/Poorly_Organized_Data_1.xlsx")
+old_workbook =  load_workbook(filename = "Poorly_Organized_Data_1.xlsx")
 
 formatted_workbook = Workbook()
 
@@ -49,9 +48,22 @@ for classes in list_classes :
 # HALEY SOMMER - TASK 3 - Each column should have an excel filter element above it
 
 
-# UNCLAIMED - TASK 4 - Each sheet should have summary information
+# Rebecca - TASK 4 - Each sheet should have summary information
 # Use functions to calculate the following data
 # The Highest Grade, lowest grade, mean grade, median grade, number of students in class
+for classes in list_classes :
+    formatted_workbook.create_sheet(classes)
+    formatted_workbook[classes]["F1"] = "Summary Type"
+    formatted_workbook[classes]["F2"] = "Highest Grade"
+    formatted_workbook[classes]["F3"] = "Lowest Grade"
+    formatted_workbook[classes]["F4"] = "Median Grade"
+    formatted_workbook[classes]["F5"] = "Number of Students"
+    formatted_workbook[classes]["G1"] = "Data"
+    formatted_workbook[classes]["G2"] = "=MAX(D:D)"
+    formatted_workbook[classes]["G3"] = "=MIN(D:D)"
+    formatted_workbook[classes]["G4"] = "=AVERAGE(D:D)"
+    formatted_workbook[classes]["G5"] = "=COUNT(D:D)"
+
 
 # UNCLAIMED - TASK 5 - Format each sheet so the columns are the title width + 5. Bold headers too.
 
