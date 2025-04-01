@@ -1,3 +1,4 @@
+# Authors: Conrad Bradford, Blake Rogers, Haley Sommer
 # IS 303 Section 003
 # Write a program that takes in grade data excel sheets and formats it easy to use.
 
@@ -38,12 +39,14 @@ for classes in list_classes :
     for row in range(2, old_workbook['Grades'].max_row + 1) :
         
         if classes == old_workbook['Grades'].cell(row=row, column=1).value :
-            stud_string = old_workbook['Grades'].cell(row=row, column=col_num).value
-
+            stud_string = old_workbook['Grades'].cell(row=row, column=2).value  # Full "Last_First_ID" string
             split_list = stud_string.split("_")
-
-            formatted_workbook[classes].append(split_list)
             # BLAKE ROGERS - add grade values to each row in each sheet
+            grade = old_workbook['Grades'].cell(row=row, column=3).value
+
+            split_list.append(grade)
+            formatted_workbook[classes].append(split_list)
+
             
 # HALEY SOMMER - TASK 3 - Each column should have an excel filter element above it
 
