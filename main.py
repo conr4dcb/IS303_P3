@@ -68,21 +68,19 @@ for classes in list_classes :
 
 
 # ELISE CHAPMAN - TASK 5 - Format each sheet so the columns are the title width + 5.
-columns = ["A", "B", "C", "D", "E", "F", "G", "H"] 
-
-for iCol in formatted_workbook[classes].columns : 
-    max_width = 0
-    for cell in iCol:
-        if cell.value :
-            max_width = max(max_width, len(str(cell.value)))
-    adjusted_width = max_width + 5
-    formatted_workbook[classes].column_dimensions [columns[0]].width = adjusted_width
-
 # Bold Headers
-for cell in formatted_workbook[classes]["1:1"] :
-    cell.font = Font(bold=True)
+columns = ["A", "B", "C", "D", "E", "F", "G"]
+for classes in list_classes :
+    i = 0
+    for row in formatted_workbook[classes]["A1:G1"] :
+        for cell in row:
+            cell.font = Font(bold=True)
+            max_width = len(str(cell.value))
+            adjusted_width = max_width + 5
+            formatted_workbook[classes].column_dimensions [columns[i]].width = adjusted_width
+            i +=1
 
-# CONRAD BRADFORD - Save the new excel workbook named "formatted_grades.xlsx"
+# CONRAD BRADFORD - TASK 6 - Save the new excel workbook named "formatted_grades.xlsx"
 
 formatted_workbook.save(filename="formatted_grades.xlsx")
 formatted_workbook.close()
