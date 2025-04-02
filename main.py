@@ -6,7 +6,6 @@ import openpyxl
 from openpyxl import Workbook
 from openpyxl.styles import Font
 from openpyxl import load_workbook
-from openpyxl.utils import get_column_letter
 
 
 old_workbook =  load_workbook(filename = "Poorly_Organized_Data_1.xlsx")
@@ -52,9 +51,8 @@ for classes in list_classes :
 # HALEY SOMMER - TASK 3 - Each column should have an excel filter element above it
 
 # Use the previously written class for loop as a basis for looping these columns in each sheet
-    max_row = formatted_workbook[classes].max_row
-    last_col = get_column_letter(formatted_workbook[classes].max_column) # use the openpxyl utility get_column_letter to fill in the last column letter
-    formatted_workbook[classes].auto_filter.ref = f"A1:{last_col}{max_row}" # use auto_filter.ref to add filters to the first 4 columns
+    max_row = formatted_workbook[classes].max_row  
+    formatted_workbook[classes].auto_filter.ref = f"A1:D{max_row}" # use auto_filter.ref to add filters to the first 4 columns
 
 # Rebecca - TASK 4 - Each sheet should have summary information
 # Use functions to calculate the following data
